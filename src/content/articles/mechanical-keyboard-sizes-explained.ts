@@ -15,6 +15,7 @@ const article: ArticleInput = {
   publishedAt: "2026-10-12",
   method: "research-based",
   hero: {
+    photo: "cover-keyboard-sizes",
     illustration: "keyboard",
     alt: "Illustration of a compact 75% keyboard with highlighted arrow keys next to a mouse on a dark desk.",
   },
@@ -238,6 +239,7 @@ const article: ArticleInput = {
       "A visual guide to keyboard sizes: what each layout keeps, how much desk width it saves, and which size suits office work, programming, gaming and small desks.",
     board: "Keyboards & Desk Gear",
     template: "roundup",
+    photo: "pin-compact-keyboard",
   },
 };
 

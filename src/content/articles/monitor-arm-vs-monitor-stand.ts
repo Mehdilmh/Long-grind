@@ -15,6 +15,7 @@ const article: ArticleInput = {
   publishedAt: "2026-10-12",
   method: "research-based",
   hero: {
+    photo: "cover-monitor-arm-vs-stand",
     illustration: "monitor",
     alt: "Illustration comparing a monitor on a desk stand with a monitor floating on a clamp-mounted arm above a clear desk surface.",
   },
@@ -220,6 +221,7 @@ const article: ArticleInput = {
       "A clear comparison of monitor arms and monitor stands: desk space, adjustability, VESA and weight compatibility, and which suits small desks, dual monitors and standing desks.",
     board: "Desk Setup Ideas",
     template: "comparison",
+    photo: "pin-monitor-arm",
   },
 };
 

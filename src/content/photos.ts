@@ -42,6 +42,38 @@ export const photos = {
     alt: "A clean desk with no visible cables on top and a cable tray underneath, against an ivory wall.",
     label: AI_LABEL,
   },
+  "cover-monitor-arm-vs-stand": {
+    src: "/images/photos/cover-monitor-arm-vs-stand.webp",
+    share: "src/assets/share/cover-monitor-arm-vs-stand.jpg",
+    width: 1536,
+    height: 1024,
+    alt: "Two identical monitors on one desk: the left on its own stand, the right on a clamp-mounted arm leaving the desk surface clear.",
+    label: AI_LABEL,
+  },
+  "pin-monitor-arm": {
+    src: "/images/photos/pin-monitor-arm.webp",
+    share: "src/assets/share/pin-monitor-arm.jpg",
+    width: 1024,
+    height: 1536,
+    alt: "A monitor floating on a black arm above a clear charcoal desk with a keyboard and a mug.",
+    label: AI_LABEL,
+  },
+  "cover-keyboard-sizes": {
+    src: "/images/photos/cover-keyboard-sizes.webp",
+    share: "src/assets/share/cover-keyboard-sizes.jpg",
+    width: 1536,
+    height: 1024,
+    alt: "Four dark keyboards of decreasing width stacked on a desk mat, from a full-size board with number pad down to a compact board.",
+    label: AI_LABEL,
+  },
+  "pin-compact-keyboard": {
+    src: "/images/photos/pin-compact-keyboard.webp",
+    share: "src/assets/share/pin-compact-keyboard.jpg",
+    width: 1024,
+    height: 1536,
+    alt: "A compact keyboard and mouse on a felt desk mat with plenty of free space, a mug, a plant and a yellow notebook.",
+    label: AI_LABEL,
+  },
 } satisfies Record<string, Photo>;
 
 export type PhotoId = keyof typeof photos;

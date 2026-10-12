@@ -134,14 +134,15 @@
     {
       "id": "cover-monitor-arm-vs-stand",
       "files": [
-        "public/images/photos/cover-monitor-arm-vs-stand.png"
+        "public/images/photos/cover-monitor-arm-vs-stand.webp",
+        "src/assets/share/cover-monitor-arm-vs-stand.jpg (JPEG copy for OG/Pinterest rendering)"
       ],
       "source": "AI-generated with GPT Image 2 (openai/gpt-image-2) via fal.ai",
       "falRequestId": "01a1313e-23f1-7d70-9013-12d096712c0b",
       "falAssetRecordId": "db6hun4regj2nhqchleg",
       "generated": "2026-10-12",
       "license": "Commercial use per fal.ai and OpenAI terms — owner to confirm on the model page before launch",
-      "status": "pending download (not yet in repo)",
+      "status": "in repo",
       "usedFor": "Cover: monitor-arm-vs-monitor-stand",
       "altText": "Two identical monitors on one desk: the left on its own stand, the right on a clamp-mounted arm leaving the desk surface clear.",
       "notes": "AI-generated scene; not a photo of any specific product. Label as an illustration where it could be mistaken for a product photo."
@@ -149,14 +150,15 @@
     {
       "id": "cover-keyboard-sizes",
       "files": [
-        "public/images/photos/cover-keyboard-sizes.png"
+        "public/images/photos/cover-keyboard-sizes.webp",
+        "src/assets/share/cover-keyboard-sizes.jpg (JPEG copy for OG/Pinterest rendering)"
       ],
       "source": "AI-generated with GPT Image 2 (openai/gpt-image-2) via fal.ai",
       "falRequestId": "01a1313e-247c-7b81-8c62-ad9195f1c2c3",
       "falAssetRecordId": "db6huncregj05iichmc0",
       "generated": "2026-10-12",
       "license": "Commercial use per fal.ai and OpenAI terms — owner to confirm on the model page before launch",
-      "status": "pending download (not yet in repo)",
+      "status": "in repo",
       "usedFor": "Cover: mechanical-keyboard-sizes-explained (illustrative only; not an accurate layout diagram)",
       "altText": "Four dark keyboards of decreasing width stacked on a desk mat, from a full-size board with number pad down to a compact board.",
       "notes": "AI-generated scene; not a photo of any specific product. Label as an illustration where it could be mistaken for a product photo."
@@ -180,14 +182,15 @@
     {
       "id": "pin-monitor-arm",
       "files": [
-        "public/images/photos/pin-monitor-arm.png"
+        "public/images/photos/pin-monitor-arm.webp",
+        "src/assets/share/pin-monitor-arm.jpg (JPEG copy for OG/Pinterest rendering)"
       ],
       "source": "AI-generated with GPT Image 2 (openai/gpt-image-2) via fal.ai",
       "falRequestId": "01a1313e-23f3-7e73-8477-6118f7ab3f39",
       "falAssetRecordId": "db6huosregj25aichq4g",
       "generated": "2026-10-12",
       "license": "Commercial use per fal.ai and OpenAI terms — owner to confirm on the model page before launch",
-      "status": "pending download (not yet in repo)",
+      "status": "in repo",
       "usedFor": "Pinterest: monitor arm",
       "altText": "A monitor floating on a black arm above a clear charcoal desk with a keyboard and a mug.",
       "notes": "AI-generated scene; not a photo of any specific product. Label as an illustration where it could be mistaken for a product photo."
@@ -195,14 +198,15 @@
     {
       "id": "pin-compact-keyboard",
       "files": [
-        "public/images/photos/pin-compact-keyboard.png"
+        "public/images/photos/pin-compact-keyboard.webp",
+        "src/assets/share/pin-compact-keyboard.jpg (JPEG copy for OG/Pinterest rendering)"
       ],
       "source": "AI-generated with GPT Image 2 (openai/gpt-image-2) via fal.ai",
       "falRequestId": "01a1313e-23f1-7d70-9013-12e9d2815b2d",
       "falAssetRecordId": "db6hupcregj2nhqchrg0",
       "generated": "2026-10-12",
       "license": "Commercial use per fal.ai and OpenAI terms — owner to confirm on the model page before launch",
-      "status": "pending download (not yet in repo)",
+      "status": "in repo",
       "usedFor": "Pinterest: compact keyboard",
       "altText": "A compact keyboard and mouse on a felt desk mat with plenty of free space, a mug, a plant and a yellow notebook.",
       "notes": "AI-generated scene; not a photo of any specific product. Label as an illustration where it could be mistaken for a product photo."
