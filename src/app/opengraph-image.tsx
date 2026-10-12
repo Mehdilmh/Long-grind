@@ -6,5 +6,5 @@ export const contentType = "image/png";
 export const alt = "LongGrind — gear for the long game";
 
 export default async function Image() {
-  return renderOgImage({ title: "Desk setups built for the long game.", kicker: site.tagline, illustration: "hero" });
+  return renderOgImage({ title: "Desk setups built for the long game.", kicker: site.tagline, illustration: "hero", photo: "src/assets/share/desk-flatlay.jpg" });
 }

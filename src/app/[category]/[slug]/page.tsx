@@ -17,7 +17,7 @@ import { pageMetadata } from "@/lib/seo";
 import { articleJsonLd } from "@/lib/structured-data";
 import { formatDate } from "@/lib/text";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { Illustration } from "@/components/Illustration";
+import { Cover } from "@/components/Cover";
 import { ArticleBody } from "@/components/ArticleBody";
 import { TableOfContents } from "@/components/TableOfContents";
 import { Faq } from "@/components/Faq";
@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </div>
         <div className="container pb-12">
-          <Illustration name={a.hero.illustration} alt={a.hero.alt} priority />
+          <Cover hero={a.hero} priority />
         </div>
       </header>
 

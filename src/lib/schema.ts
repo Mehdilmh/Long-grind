@@ -183,7 +183,12 @@ export const articleSchema = z
     updatedAt: isoDate.optional(),
     method: evaluationMethod,
     testingNotes: z.string().optional(),
-    hero: z.object({ illustration: z.string(), alt: z.string().min(10) }),
+    hero: z.object({
+      illustration: z.string(),
+      alt: z.string().min(10),
+      /** Optional raster image id from src/content/photos.ts; replaces the illustration as the cover. */
+      photo: z.string().optional(),
+    }),
     /** Direct answer shown first; written to be quotable. */
     answer: z.string().min(80),
     keyTakeaways: z.array(z.string()).min(2).max(6),
@@ -200,6 +205,8 @@ export const articleSchema = z
         template: z
           .enum(["guide", "steps", "comparison", "tips", "roundup", "gift", "inspiration", "before-after"])
           .default("guide"),
+        /** Optional portrait photo id (src/content/photos.ts) used as the pin's main image. */
+        photo: z.string().optional(),
         /** Required for "before-after": owner's own photos stored in /public. */
         beforeAfter: z.object({ before: z.string().startsWith("/"), after: z.string().startsWith("/") }).optional(),
       })

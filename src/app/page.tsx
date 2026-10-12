@@ -3,6 +3,8 @@ import { ArrowRight, BookOpenCheck, FileSearch, Scale, ShieldCheck } from "lucid
 import { getArticles, getArticleBySlug, getArticlesInCategory, getCategories, articlePath } from "@/lib/content";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Illustration } from "@/components/Illustration";
+import { PhotoImage } from "@/components/PhotoImage";
+import { photos } from "@/content/photos";
 import { Newsletter } from "@/components/Newsletter";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/config/site";
@@ -54,7 +56,7 @@ export default function HomePage() {
           <div className="lg:col-span-6">
             <div className="relative">
               <div aria-hidden="true" className="absolute -inset-3 translate-x-4 translate-y-4 border border-lime/40" />
-              <Illustration name="hero" alt="Illustration of a tidy desk with a monitor, task lamp, keyboard, mug and plant." className="relative" priority />
+              <PhotoImage photo={photos["desk-flatlay"]} className="relative" priority sizes="(min-width: 1024px) 640px, 100vw" />
             </div>
           </div>
         </div>

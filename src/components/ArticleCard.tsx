@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Article } from "@/lib/schema";
 import { articlePath, getCategory, readingTime } from "@/lib/content";
-import { Illustration } from "./Illustration";
+import { Cover } from "./Cover";
 import { formatDate } from "@/lib/text";
 
 export const typeLabels: Record<Article["type"], string> = {
@@ -51,7 +51,7 @@ export function ArticleCard({
     <article className={`group relative flex flex-col ${feature ? "lg:grid lg:grid-cols-12 lg:gap-10" : ""}`}>
       <div className={`overflow-hidden ${feature ? "lg:col-span-7" : ""}`}>
         <div className="transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transform-none">
-          <Illustration name={article.hero.illustration} alt={article.hero.alt} />
+          <Cover hero={article.hero} sizes={feature ? "(min-width: 1024px) 700px, 100vw" : "(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"} />
         </div>
       </div>
       <div className={`flex flex-1 flex-col pt-5 ${feature ? "lg:col-span-5 lg:justify-center lg:pt-0" : ""}`}>

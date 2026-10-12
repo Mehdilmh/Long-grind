@@ -47,12 +47,15 @@ interface ShareInput {
   title: string;
   kicker: string;
   illustration: string;
+  /** Repo-relative JPEG path; used instead of the illustration when set. */
+  photo?: string;
   dek?: string;
   /** Section headings listed on Pinterest images ("Inside this guide"). */
   inside?: string[];
 }
 
-export async function renderOgImage({ title, kicker, illustration }: ShareInput) {
+export async function renderOgImage({ title, kicker, illustration, photo }: ShareInput) {
+  const side = photo ? await fileDataUri(photo) : null;
   return new ImageResponse(
     (
       <div style={{ display: "flex", width: "100%", height: "100%", background: C.charcoal }}>
@@ -62,8 +65,13 @@ export async function renderOgImage({ title, kicker, illustration }: ShareInput)
           <Brand />
         </div>
         <div style={{ display: "flex", width: 560, height: "100%", overflow: "hidden", borderLeft: `8px solid ${C.lime}` }}>
-          {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-          <img src={illustrationDataUri(illustration)} width={945} height={630} style={{ width: 945, height: 630, marginLeft: -192 }} />
+          {side ? (
+            // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+            <img src={side} width={560} height={630} style={{ width: 560, height: 630, objectFit: "cover" }} />
+          ) : (
+            // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+            <img src={illustrationDataUri(illustration)} width={945} height={630} style={{ width: 945, height: 630, marginLeft: -192 }} />
+          )}
         </div>
       </div>
     ),
@@ -92,6 +100,11 @@ const text = (size: number, weight: 500 | 800, color: string, extra: Record<stri
 
 function Bullet() {
   return <div style={{ display: "flex", flexShrink: 0, width: 14, height: 14, marginTop: 10, background: C.lime, border: `2px solid ${C.charcoal}` }} />;
+}
+
+async function fileDataUri(relPath: string) {
+  const buf = await readFile(join(process.cwd(), relPath));
+  return `data:image/jpeg;base64,${buf.toString("base64")}`;
 }
 
 async function publicImage(path: string) {
@@ -190,16 +203,22 @@ async function PinMiddle({ body }: { body: PinBody }) {
  * Pinterest image templates (1000×1500). The brand bar and kicker are shared;
  * the middle section varies by template. See docs/PINTEREST.md.
  */
-export async function renderPinImage({ title, kicker, illustration, body }: { title: string; kicker: string; illustration: string; body: PinBody }) {
+export async function renderPinImage({ title, kicker, illustration, body, photo }: { title: string; kicker: string; illustration: string; body: PinBody; photo?: string }) {
   const tall = body.kind === "inspiration";
   const imgH = tall ? 900 : body.kind === "before-after" ? 420 : 600;
+  const top = photo ? await fileDataUri(photo) : null;
   const middle = await PinMiddle({ body });
   return new ImageResponse(
     (
       <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%", background: C.ivory }}>
         <div style={{ display: "flex", width: 1000, height: imgH, overflow: "hidden" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-          <img src={illustrationDataUri(illustration)} width={imgH * 1.5} height={imgH} style={{ width: imgH * 1.5, height: imgH, marginLeft: (1000 - imgH * 1.5) / 2 }} />
+          {top ? (
+            // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+            <img src={top} width={1000} height={imgH} style={{ width: 1000, height: imgH, objectFit: "cover" }} />
+          ) : (
+            // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+            <img src={illustrationDataUri(illustration)} width={imgH * 1.5} height={imgH} style={{ width: imgH * 1.5, height: imgH, marginLeft: (1000 - imgH * 1.5) / 2 }} />
+          )}
         </div>
         <div style={{ display: "flex", flexDirection: "column", flex: 1, padding: "44px 60px 0", borderTop: `14px solid ${C.lime}`, gap: 22 }}>
           <div style={text(22, 800, "#5D676D", { letterSpacing: 5, textTransform: "uppercase" })}>{kicker}</div>

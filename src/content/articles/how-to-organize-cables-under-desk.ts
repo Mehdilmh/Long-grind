@@ -15,6 +15,7 @@ const article: ArticleInput = {
   publishedAt: "2026-10-12",
   method: "research-based",
   hero: {
+    photo: "cover-cable-management",
     illustration: "cables",
     alt: "Illustration of a desk seen from below with a cable tray, a mounted power strip and a single bundle of cables running down one leg.",
   },
@@ -246,6 +247,7 @@ const article: ArticleInput = {
       "A safety-first, step-by-step plan for hiding cables under any desk: power strip placement, tray mounting, routing, a single floor drop and slack for standing desks. Includes no-drill options for renters.",
     board: "Desk Cable Management",
     template: "steps",
+    photo: "pin-cable-management",
   },
 };
 

@@ -102,14 +102,15 @@
     {
       "id": "desk-flatlay",
       "files": [
-        "public/images/photos/desk-flatlay.png"
+        "public/images/photos/desk-flatlay.webp",
+        "src/assets/share/desk-flatlay.jpg (JPEG copy for OG/Pinterest rendering)"
       ],
       "source": "AI-generated with GPT Image 2 (openai/gpt-image-2) via fal.ai",
       "falRequestId": "01a1313e-23f4-70d2-ade7-b890c61963e9",
       "falAssetRecordId": "db6hum4regj1e0qchjb0",
       "generated": "2026-10-12",
       "license": "Commercial use per fal.ai and OpenAI terms — owner to confirm on the model page before launch",
-      "status": "pending download (not yet in repo)",
+      "status": "in repo",
       "usedFor": "Inspiration / spare hero",
       "altText": "Top-down view of a tidy desk mat with headphones, a compact keyboard, a mouse, a lime-green notebook, a pen, a coffee mug and a plant.",
       "notes": "AI-generated scene; not a photo of any specific product. Label as an illustration where it could be mistaken for a product photo."
@@ -117,14 +118,15 @@
     {
       "id": "cover-cable-management",
       "files": [
-        "public/images/photos/cover-cable-management.png"
+        "public/images/photos/cover-cable-management.webp",
+        "src/assets/share/cover-cable-management.jpg (JPEG copy for OG/Pinterest rendering)"
       ],
       "source": "AI-generated with GPT Image 2 (openai/gpt-image-2) via fal.ai",
       "falRequestId": "01a1313e-2404-7bf0-90ac-15f0bfc7aeb8",
       "falAssetRecordId": "db6humkregj05t2chkb0",
       "generated": "2026-10-12",
       "license": "Commercial use per fal.ai and OpenAI terms — owner to confirm on the model page before launch",
-      "status": "pending download (not yet in repo)",
+      "status": "in repo",
       "usedFor": "Cover: how-to-organize-cables-under-desk",
       "altText": "Underside of a desk with a metal cable tray holding a power strip, cables bundled with ties, and one sleeve running down the leg to a wall outlet.",
       "notes": "AI-generated scene; not a photo of any specific product. Label as an illustration where it could be mistaken for a product photo."
@@ -162,14 +164,15 @@
     {
       "id": "pin-cable-management",
       "files": [
-        "public/images/photos/pin-cable-management.png"
+        "public/images/photos/pin-cable-management.webp",
+        "src/assets/share/pin-cable-management.jpg (JPEG copy for OG/Pinterest rendering)"
       ],
       "source": "AI-generated with GPT Image 2 (openai/gpt-image-2) via fal.ai",
       "falRequestId": "01a1313e-23f4-70d2-ade7-b88172e6a995",
       "falAssetRecordId": "db6huocregj1e0qchog0",
       "generated": "2026-10-12",
       "license": "Commercial use per fal.ai and OpenAI terms — owner to confirm on the model page before launch",
-      "status": "pending download (not yet in repo)",
+      "status": "in repo",
       "usedFor": "Pinterest: cable management",
       "altText": "A clean desk with no visible cables on top and a cable tray underneath, against an ivory wall.",
       "notes": "AI-generated scene; not a photo of any specific product. Label as an illustration where it could be mistaken for a product photo."

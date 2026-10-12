@@ -5,6 +5,7 @@ import { products as rawProducts } from "@/content/products";
 import { authors as rawAuthors } from "@/content/authors";
 import { tags as rawTags } from "@/content/tags";
 import { showDrafts } from "@/lib/env";
+import { getPhoto } from "@/content/photos";
 import {
   articleSchema,
   authorSchema,
@@ -45,6 +46,8 @@ for (const a of articlesList) {
   if (!categorySlugs.has(a.category)) throw new Error(`${where}: unknown category ${a.category}`);
   if (!authorIds.has(a.authorId)) throw new Error(`${where}: unknown author ${a.authorId}`);
   for (const t of a.tags) if (!tagSlugs.has(t)) throw new Error(`${where}: unknown tag ${t}`);
+  if (a.hero.photo && !getPhoto(a.hero.photo)) throw new Error(`${where}: unknown hero photo ${a.hero.photo}`);
+  if (a.pinterest?.photo && !getPhoto(a.pinterest.photo)) throw new Error(`${where}: unknown pin photo ${a.pinterest.photo}`);
   for (const b of a.body)
     if (b.type === "productPicks")
       for (const p of b.picks) if (!productIds.has(p.productId)) throw new Error(`${where}: unknown product ${p.productId}`);

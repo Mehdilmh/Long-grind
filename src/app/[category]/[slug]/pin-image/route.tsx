@@ -1,6 +1,7 @@
 import { articleProducts, getArticle, getArticles, getCategory, getProduct, tableOfContents } from "@/lib/content";
 import { renderPinImage, type PinBody } from "@/lib/share-image";
 import type { Article } from "@/lib/schema";
+import { getPhoto } from "@/content/photos";
 import { plainText } from "@/lib/text";
 
 /** 1000×1500 (2:3) Pinterest-ready image for each article. */
@@ -65,5 +66,6 @@ export async function GET(_req: Request, { params }: { params: Promise<{ categor
     kicker: getCategory(a.category)?.name ?? "LongGrind",
     illustration: a.hero.illustration,
     body: pinBody(a),
+    photo: getPhoto(a.pinterest?.photo ?? a.hero.photo)?.share,
   });
 }
