@@ -14,6 +14,7 @@ export const categories: Category[] = [
       "This section covers the furniture and mounting hardware that shapes a workspace: desks, monitor arms and stands, risers and the layout decisions behind them. We explain the trade-offs in plain terms and point to the published guidance and manufacturer documentation behind our claims.",
     ],
     illustration: "desk",
+    photo: "section-desk-workspace",
     subtopics: [
       { name: "Monitor mounting", description: "Arms, stands, risers and VESA compatibility.", tag: "monitor-setup" },
       { name: "Small spaces", description: "Making a compact desk or corner work harder.", tag: "small-desk" },
@@ -43,6 +44,7 @@ export const categories: Category[] = [
       "We focus on the decisions that matter before brand or switch preferences: form factor, layout, connectivity and how a peripheral fits the space you actually have.",
     ],
     illustration: "keyboard",
+    photo: "section-keyboards",
     subtopics: [
       { name: "Keyboard sizes", description: "Full-size, TKL, 75%, 65% and 60% explained.", tag: "keyboards" },
       { name: "Mechanical keyboards", description: "What changes when you go mechanical.", tag: "mechanical-keyboards" },
@@ -72,6 +74,7 @@ export const categories: Category[] = [
       "Our organization guides start with planning and safety, then suggest the simplest hardware that does the job. Lighting coverage focuses on reducing glare and making a desk comfortable to use after dark.",
     ],
     illustration: "cables",
+    photo: "section-lighting-organization",
     subtopics: [
       { name: "Cable management", description: "Routing, trays, ties and power placement.", tag: "cable-management" },
       { name: "Desk organization", description: "Reducing clutter without hiding what you need.", tag: "desk-organization" },
@@ -101,6 +104,7 @@ export const categories: Category[] = [
       "In this section we start from the problem, explain the options, and only then talk about products. If the honest answer is that you don't need to buy anything, we'll say so.",
     ],
     illustration: "productivity",
+    photo: "section-productivity",
     subtopics: [
       { name: "Home office", description: "Setups for full-time remote work.", tag: "home-office" },
       { name: "Students", description: "Compact, budget-aware workspace ideas.", tag: "students" },
@@ -130,6 +134,7 @@ export const categories: Category[] = [
       "We cover the parts of a gaming setup that affect space and comfort. For performance claims we rely on manufacturer specifications and say clearly when something hasn't been independently measured.",
     ],
     illustration: "gaming",
+    photo: "section-gaming",
     subtopics: [
       { name: "Mouse space", description: "Why compact keyboards are popular with gamers.", tag: "keyboards" },
       { name: "Clean setups", description: "Cable routing for consoles, PCs and lighting.", tag: "cable-management" },
@@ -159,6 +164,7 @@ export const categories: Category[] = [
       "This section focuses on fitting creator equipment into a normal desk without turning it into a tangle, and on helping beginners understand what each piece actually does before they spend money.",
     ],
     illustration: "creator",
+    photo: "section-creator",
     subtopics: [
       { name: "Streaming basics", description: "What a beginner setup actually needs.", tag: "streaming" },
       { name: "Mounting", description: "Arms and clamps that free up desk space.", tag: "monitor-setup" },
@@ -188,6 +194,7 @@ export const categories: Category[] = [
       "We don't publish star ratings, invented scores or prices that change by the hour. Instead you'll find the criteria that actually separate the options, and links to the sources we checked.",
     ],
     illustration: "guides",
+    photo: "section-buying-guides",
     subtopics: [
       { name: "Comparisons", description: "Two approaches, side by side.", tag: "monitor-setup" },
       { name: "Keyboards", description: "Choosing a size and layout.", tag: "keyboards" },

@@ -244,6 +244,8 @@ export const categorySchema = z.object({
   kicker: z.string(),
   intro: z.array(z.string()).min(1),
   illustration: z.string(),
+  /** Optional raster image id from src/content/photos.ts; replaces the illustration on tiles and the section cover. */
+  photo: z.string().optional(),
   subtopics: z.array(z.object({ name: z.string(), description: z.string(), tag: slug })).min(2),
   /** Short evergreen primer so the page is useful on its own. */
   primer: z.object({ title: z.string(), points: z.array(z.object({ title: z.string(), text: z.string() })).min(3) }),

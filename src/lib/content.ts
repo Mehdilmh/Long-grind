@@ -37,6 +37,9 @@ const tagsList = parseEach(tagSchema, rawTags, "tag");
 const articlesList = parseEach(articleSchema, allArticles, "article");
 
 const categorySlugs = new Set(categoriesList.map((c) => c.slug));
+for (const c of categoriesList) {
+  if (c.photo && !getPhoto(c.photo)) throw new Error(`category "${c.slug}": unknown photo ${c.photo}`);
+}
 const tagSlugs = new Set(tagsList.map((t) => t.slug));
 const authorIds = new Set(authorsList.map((a) => a.id));
 const productIds = new Set(productsList.map((p) => p.id));

@@ -3,8 +3,8 @@ import { ArrowRight, BookOpenCheck, FileSearch, Scale, ShieldCheck } from "lucid
 import { getArticles, getArticleBySlug, getArticlesInCategory, getCategories, articlePath } from "@/lib/content";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Illustration } from "@/components/Illustration";
-import { PhotoImage } from "@/components/PhotoImage";
-import { photos } from "@/content/photos";
+import { PhotoCaption, PhotoImage } from "@/components/PhotoImage";
+import { getPhoto, photos } from "@/content/photos";
 import { Newsletter } from "@/components/Newsletter";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/config/site";
@@ -18,9 +18,9 @@ export const metadata = pageMetadata({
 });
 
 const principles = [
-  { n: "01", title: "Screen first", text: "Set screen height and distance before buying anything else. It changes what else you need.", href: "/desk-workspace/monitor-arm-vs-monitor-stand", illustration: "monitor" },
-  { n: "02", title: "One power hub", text: "Mount one strip high and plugged into the wall. Every cable route starts there.", href: "/lighting-organization/how-to-organize-cables-under-desk", illustration: "cables" },
-  { n: "03", title: "Right-size the keyboard", text: "Drop the keys you never use and give your mouse hand its space back.", href: "/keyboards-peripherals/mechanical-keyboard-sizes-explained", illustration: "keyboard" },
+  { n: "01", title: "Screen first", text: "Set screen height and distance before buying anything else. It changes what else you need.", href: "/desk-workspace/monitor-arm-vs-monitor-stand", illustration: "monitor", photo: "move-screen-first" },
+  { n: "02", title: "One power hub", text: "Mount one strip high and plugged into the wall. Every cable route starts there.", href: "/lighting-organization/how-to-organize-cables-under-desk", illustration: "cables", photo: "move-power-hub" },
+  { n: "03", title: "Right-size the keyboard", text: "Drop the keys you never use and give your mouse hand its space back.", href: "/keyboards-peripherals/mechanical-keyboard-sizes-explained", illustration: "keyboard", photo: "move-keyboard" },
 ];
 
 export default function HomePage() {
@@ -83,14 +83,20 @@ export default function HomePage() {
         <ul className="mt-10 grid gap-px border border-charcoal/15 bg-charcoal/15 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((c, i) => {
             const count = getArticlesInCategory(c.slug).length;
+            const photo = getPhoto(c.photo);
             return (
               <li key={c.slug} className={`group relative bg-ivory-100 ${i === 0 ? "sm:col-span-2" : ""}`}>
                 <div className="overflow-hidden">
                   <div className="transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transform-none">
-                    <Illustration name={c.illustration} alt="" />
+                    {photo ? (
+                      <PhotoImage photo={photo} showCredit={false} alt="" sizes={i === 0 ? "(min-width: 1024px) 620px, (min-width: 640px) 100vw, 100vw" : "(min-width: 1024px) 310px, (min-width: 640px) 50vw, 100vw"} />
+                    ) : (
+                      <Illustration name={c.illustration} alt="" />
+                    )}
                   </div>
                 </div>
-                <div className="p-5">
+                {photo?.credit && <PhotoCaption credit={photo.credit} as="p" className="px-5" />}
+                <div className="p-5 pt-3">
                   <p className="kicker text-steel-600">{c.kicker}</p>
                   <h3 className={`mt-1 font-bold tracking-tight ${i === 0 ? "font-display text-3xl" : "text-lg"}`}>
                     <Link href={`/${c.slug}`} className="after:absolute after:inset-0 decoration-lime decoration-[3px] underline-offset-4 group-hover:underline">
@@ -176,9 +182,15 @@ export default function HomePage() {
           Three moves that make any desk feel calmer
         </h2>
         <ol className="mt-12 grid gap-10 md:grid-cols-3">
-          {principles.map((p) => (
+          {principles.map((p) => {
+            const photo = getPhoto(p.photo);
+            return (
             <li key={p.n} className="group relative">
-              <Illustration name={p.illustration} alt="" />
+              {photo ? (
+                <PhotoImage photo={photo} alt="" sizes="(min-width: 768px) 33vw, 100vw" />
+              ) : (
+                <Illustration name={p.illustration} alt="" />
+              )}
               <p aria-hidden="true" className="mt-5 inline-block bg-charcoal px-2 py-1 font-display text-2xl font-semibold text-lime">{p.n}</p>
               <h3 className="mt-1 text-xl font-bold">
                 <Link href={p.href} className="after:absolute after:inset-0 decoration-lime decoration-[3px] underline-offset-4 group-hover:underline">
@@ -187,7 +199,8 @@ export default function HomePage() {
               </h3>
               <p className="mt-2 leading-relaxed text-charcoal/80">{p.text}</p>
             </li>
-          ))}
+            );
+          })}
         </ol>
       </section>
 

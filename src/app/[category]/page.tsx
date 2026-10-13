@@ -14,6 +14,8 @@ import { pageMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Illustration } from "@/components/Illustration";
+import { PhotoImage } from "@/components/PhotoImage";
+import { getPhoto } from "@/content/photos";
 
 export const dynamicParams = false;
 
@@ -43,6 +45,7 @@ export default async function CategoryPage({ params }: Props) {
   const articles = getArticlesInCategory(c.slug);
   const related = getRelatedForCategory(c.slug, articles);
   const others = getCategories().filter((x) => x.slug !== c.slug);
+  const photo = getPhoto(c.photo);
 
   return (
     <>
@@ -59,7 +62,11 @@ export default async function CategoryPage({ params }: Props) {
             </div>
           </div>
           <div className="lg:col-span-5">
-            <Illustration name={c.illustration} alt={`Illustration representing ${c.name.toLowerCase()}.`} priority />
+            {photo ? (
+              <PhotoImage photo={photo} priority sizes="(min-width: 1024px) 500px, 100vw" />
+            ) : (
+              <Illustration name={c.illustration} alt={`Illustration representing ${c.name.toLowerCase()}.`} priority />
+            )}
           </div>
         </div>
       </section>

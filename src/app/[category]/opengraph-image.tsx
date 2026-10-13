@@ -1,5 +1,6 @@
 import { getCategories, getCategory } from "@/lib/content";
 import { ogSize, renderOgImage } from "@/lib/share-image";
+import { getPhoto } from "@/content/photos";
 
 export const size = ogSize;
 export const contentType = "image/png";
@@ -12,5 +13,5 @@ export function generateStaticParams() {
 export default async function Image({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params;
   const c = getCategory(category)!;
-  return renderOgImage({ title: c.name, kicker: `LongGrind · ${c.kicker}`, illustration: c.illustration });
+  return renderOgImage({ title: c.name, kicker: `LongGrind · ${c.kicker}`, illustration: c.illustration, photo: getPhoto(c.photo)?.share });
 }
